@@ -13,9 +13,11 @@ img {
 #photo-template {
   max-width: 960px;
   margin: 0 auto;
-  background-color: lightblue;
+  background-color: whitesmoke;
   box-shadow: 10px 10px 10px 15px #888888;
   border-radius: 30px;
+  border: solid 2px blue;
+  margin-top: 15px;
 }
 
  h2 {

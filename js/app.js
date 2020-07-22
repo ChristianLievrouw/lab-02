@@ -1,6 +1,7 @@
 'use strict';
 
 $(() => {
+  $('#photo-template').hide();
   const getAjax = { method: 'get', dataType: 'json'};
   $.ajax('./data/page-1.json', getAjax)
     .then((data) => {
@@ -11,6 +12,8 @@ $(() => {
     })
     .then(() => {
       renderCreature();
+      $('.spinner').fadeOut();
+      $('#photo-template').fadeIn();
     });
 });
 
