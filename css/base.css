@@ -1,3 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+
 img {
-  min-width: 100px;
+  max-width: 25%;
+  margin: 0 auto;
+  display: block;
+  border: solid 1px black;
+  float: left;
+  box-shadow: 10px 10px 8px 10px #888888;
+  border-radius: 15px;
+}
+
+#photo-template {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: lightblue;
+  box-shadow: 10px 10px 10px 15px #888888;
+  border-radius: 30px;
+}
+
+ h2 {
+   text-align: center;
+   padding: 15px;
+ }
+
+p {
+  text-align: center;
+  padding: 15px;
+}
+
+body {
+  background-color: lightgray;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Righteous', cursive;
 }
