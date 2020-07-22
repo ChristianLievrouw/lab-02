@@ -9,22 +9,37 @@
   <body>
     <header>
       <h1>The Gallery of Horns</h1>
+
       <div id="filter-sort-search">
-        <section>Horns
+        <section>Type: 
+          <select id="type-filter">
+            <option value="">All</option>
+          </select>
+        </section>
+      </div>
+      
+      <!-- <div id="filter-sort-search">
+        <section>Number of Horns: 
           <select id="horns-filter">
             <option value="">All</option>
           </select>
-        </section> 
+        </section>
       </div>
-      <select>
-        <option value="default">Filter by Keyword</option>
-      </select>
+
+      <div id="filter-sort-search">
+        <section>Alphabetically: 
+          <select id="alpha-filter">
+            <option value="">All</option>
+          </select>
+        </section>
+      </div> -->
+
     </header>
     <main>
       <div class="spinner">
         <i class="fa fa-spinner fa-spin"></i>Loading
       </div>
-      <section id="photo-template">
+      <section id="photo-template" data-type="" data-horns="" data-alpha="">
         <div class="template creature">
           <h2 class="title">creature</h2>
           <img class="creature-image" src="" alt="">
