@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
-img {
-  max-width: 25%;
-  margin: 0 auto;
-  display: block;
-  border: solid 1px black;
-  float: left;
-  box-shadow: 10px 10px 8px 10px #888888;
-  border-radius: 15px;
-}
-
 #photo-template {
   max-width: 960px;
   margin: 0 auto;
@@ -17,7 +7,26 @@ img {
   box-shadow: 10px 10px 10px 15px #888888;
   border-radius: 30px;
   border: solid 2px blue;
-  margin-top: 15px;
+  /* margin-top: 15px; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.creature {
+  box-shadow: 5px 5px 4px 5px #888888;
+  border-radius: 15px;
+  width: 300px;
+}
+
+img {
+  max-width: 100px;
+  margin: 0 auto;
+  display: block;
+  border: solid 1px black;
+  box-shadow: 10px 10px 8px 10px #888888;
+  border-radius: 15px;
 }
 
  h2 {
