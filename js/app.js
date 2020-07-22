@@ -12,6 +12,7 @@ $(() => {
     })
     .then(() => {
       renderCreature();
+      renderFilters();
       $('.spinner').fadeOut();
       $('#photo-template').fadeIn();
     });
@@ -22,9 +23,14 @@ function Creature(creature) {
   this.img_url = creature.image_url;
   this.description = creature.description;
   this.horns = creature.horns;
+  this.type = creature.keyword;
+  if(Creature.allType.indexOf(this.type) < 0) {
+    Creature.allType.push(this.type);
+  }
 }
 
 Creature.all = [];
+Creature.allType = [];
 
 Creature.prototype.render = function () {
   let $template = $('.template').clone();
@@ -33,6 +39,7 @@ Creature.prototype.render = function () {
   $template.find('.creature-image').attr('src', this.img_url);
   $template.find('.creature-image').attr('alt', this.title);
   $template.find('.description').text(this.description);
+  $template.attr('data-type', this.type);
   return $template;
 }
 
@@ -41,5 +48,13 @@ function renderCreature() {
     $('#photo-template').append(creature.render())
   });
   $('.template').remove();
+}
+
+function renderFilters() {
+  Creature.allType.sort();
+  Creature.allType.forEach(type => {
+    const $option = $('<option>').text(type).attr('value', type);
+    $('#filter-sort-search').append($option);
+  })
 }
 
