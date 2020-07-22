@@ -54,7 +54,7 @@ function renderFilters() {
   Creature.allType.sort();
   Creature.allType.forEach(type => {
     const $option = $('<option>').text(type).attr('value', type);
-    $('#filter-sort-search').append($option);
+    $('#type-filter').append($option);
   })
 }
 
