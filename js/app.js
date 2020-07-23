@@ -13,6 +13,7 @@ $(() => {
     .then(() => {
       renderCreature();
       renderFilters();
+      handleFilters();
       $('.spinner').fadeOut();
       $('#photo-template').fadeIn();
     });
@@ -56,5 +57,16 @@ function renderFilters() {
     const $option = $('<option>').text(type).attr('value', type);
     $('#type-filter').append($option);
   })
+}
+
+function handleFilters() {
+  $('#type-filter').on('change', function() {
+    if($(this).val() !== ''){
+      $('.creature').hide();
+      $(`.creature[data-type*="${$(this).val()}"]`).fadeIn();
+    } else {
+      $('.creature').fadeIn();
+    }
+  });
 }
 
