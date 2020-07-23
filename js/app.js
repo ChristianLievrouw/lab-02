@@ -20,6 +20,7 @@ $(() => {
       renderCreature();
       renderFilters();
       handleFilters();
+      sort();
       $('.spinner').fadeOut();
     });
 });
@@ -69,3 +70,29 @@ function handleFilters() {
   });
 }
 
+function sort() {
+  $('#sort-filter').on('change', function() {
+    let sortBy = $(this).val();
+    if (sortBy === 'alpha') {
+      // sortAlpha();
+    } else if (sortBy === 'alpha-rev') {
+      // sortAlphaRev();
+    } else if (sortBy === 'horns') {
+      sortHorn();
+    } else if (sortBy === 'horns-rev') {
+      sortHornRev();
+    }
+  });
+}
+
+function sortHorn() {
+  $('.creature').sort((a, b) => {
+    return ($(b).data('horns')) < ($(a).data('horns')) ? 1 : -1;
+  }).appendTo('#placeholder');
+}
+
+function sortHornRev() {
+  $('.creature').sort((a, b) => {
+    return ($(b).data('horns')) > ($(a).data('horns')) ? 1 : -1;
+  }).appendTo('#placeholder');
+}
